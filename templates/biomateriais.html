@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Biomateriais</title>
+</head>
+<body>
+    <h1>Notas de Biomateriais</h1>
+    <form method="post">
+        <label>Prova 1: <input type="number" step="any" name="Prova 1" required></label><br>
+        <label>Prova 2: <input type="number" step="any" name="Prova 2" required></label><br>
+        <label>TBL 1: <input type="number" step="any" name="TBL 1" required></label><br>
+        <label>TBL 2: <input type="number" step="any" name="TBL 2" required></label><br>
+        <label>Laboratório: <input type="number" step="any" name="Laboratório" required></label><br>
+        <label>Engajamento: <input type="number" step="any" name="Engajamento" required></label><br>
+        <button type="submit">Calcular Média</button>
+    </form>
+    {% if media is defined %}
+        <h2>Média final: {{ media|round(2) }}</h2>
+    {% endif %}
+    <a href="{{ url_for('home') }}">Voltar</a>
+</body>
+</html>

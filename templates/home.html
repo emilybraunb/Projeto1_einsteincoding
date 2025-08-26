@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Página Inicial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Cálculo de notas do 6º semestre</h1>
+
+    <!-- Botões de navegação para as matérias -->
+    <div>
+        <a href="{{ url_for('bioetica') }}" class="btn">Bioética</a>
+        <a href="{{ url_for('biomateriais') }}" class="btn">Biomateriais</a>
+        <a href="{{ url_for('digestorio') }}" class="btn">Sistema Digestório</a>
+        <a href="{{ url_for('fisica') }}" class="btn">Física Médica</a>
+        <a href="{{ url_for('modelagem') }}" class="btn">Modelagem</a>
+        <a href="{{ url_for('sistemas') }}" class="btn">Sistemas Digitais</a>
+
+    </div>
+</body>
+</html>
