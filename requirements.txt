@@ -1,0 +1,3 @@
+# arquivo com as dependências do seu projeto
+
+Flask==3.0.3
