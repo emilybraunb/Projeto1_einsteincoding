@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Digestório</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
     <h1>Notas de Sistema Digestório</h1>
+    <h1>Notas de Bioética</h1>
+    {% if erro %}
+        <p style="color:red;">{{ erro }}</p>
+    {% endif %}
+    <div class="form-bloco">
     <form method="post">
         <label>Prova 1: <input type="number" step="any" name="Prova 1" required min="0" max="10"></label><br>
         <label>Prova 2: <input type="number" step="any" name="Prova 2" required min="0" max="10"></label><br>
@@ -15,12 +21,14 @@
         <label>TBL 3: <input type="number" step="any" name="TBL 3" required min="0" max="10"></label><br>
         <label>TBL 4: <input type="number" step="any" name="TBL 4" required min="0" max="10"></label><br>
         <label>TBL 5: <input type="number" step="any" name="TBL 5" required min="0" max="10"></label><br>
-
-        <button type="submit">Calcular Média</button>
+        <div style="text-align:center;">
+            <button type="submit" class="btn">Calcular Média</button>
+        </div>
     </form>
     {% if media is defined %}
         <h2>Média final: {{ media|round(2) }}</h2>
     {% endif %}
+    </div>
     <a href="{{ url_for('home') }}">Voltar</a>
 </body>
 </html>

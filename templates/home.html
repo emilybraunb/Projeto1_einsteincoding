@@ -3,30 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Página Inicial</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 10px;
-        }
-        .btn:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    
 </head>
 <body>
     <h1>Cálculo de notas do 6º semestre</h1>
 
     <!-- Botões de navegação para as matérias -->
-    <div>
+    <div class="button-container">
         <a href="{{ url_for('bioetica') }}" class="btn">Bioética</a>
         <a href="{{ url_for('biomateriais') }}" class="btn">Biomateriais</a>
         <a href="{{ url_for('digestorio') }}" class="btn">Sistema Digestório</a>
