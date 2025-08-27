@@ -7,12 +7,12 @@
 <body>
     <h1>Notas de Modelagem</h1>
     <form method="post">
-        <label>Prova 1: <input type="number" step="any" name="Prova 1" required></label><br>
-        <label>Prova 2: <input type="number" step="any" name="Prova 2" required></label><br>
-        <label>TBL 1: <input type="number" step="any" name="TBL 1" required></label><br>
-        <label>TBL 2: <input type="number" step="any" name="TBL 2" required></label><br>
-        <label>TBL 3: <input type="number" step="any" name="TBL 3" required></label><br>
-        <label>Projeto final: <input type="number" step="any" name="Projeto final" required></label><br>
+        <label>Prova 1: <input type="number" step="any" name="Prova 1" required min="0" max="10"></label><br>
+        <label>Prova 2: <input type="number" step="any" name="Prova 2" required min="0" max="10"></label><br>
+        <label>TBL 1: <input type="number" step="any" name="TBL 1" required min="0" max="10"></label><br>
+        <label>TBL 2: <input type="number" step="any" name="TBL 2" required min="0" max="10"></label><br>
+        <label>TBL 3: <input type="number" step="any" name="TBL 3" required min="0" max="10"></label><br>
+        <label>Projeto final: <input type="number" step="any" name="Projeto final" required min="0" max="10"></label><br>
 
         <button type="submit">Calcular Média</button>
     </form>

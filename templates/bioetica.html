@@ -6,15 +6,19 @@
 </head>
 <body>
     <h1>Notas de Bioética</h1>
+    {% if erro %}
+        <p style="color:red;">{{ erro }}</p>
+    {% endif %}
     <form method="post">
-        <label>Prova 1: <input type="number" step="any" name="Prova 1" required></label><br>
-        <label>Prova 2: <input type="number" step="any" name="Prova 2" required></label><br>
-        <label>Prova 3: <input type="number" step="any" name="Prova 3" required></label><br>
-        <label>TBL 1: <input type="number" step="any" name="TBL 1" required></label><br>
-        <label>TBL 2: <input type="number" step="any" name="TBL 2" required></label><br>
-        <label>TBL 3: <input type="number" step="any" name="TBL 3" required></label><br>
-        <label>Apresentação: <input type="number" step="any" name="Apresentação" required></label><br>
+        <label>Prova 1: <input type="number" step="any" name="Prova 1" required min="0" max="10"></label><br>
+        <label>Prova 2: <input type="number" step="any" name="Prova 2" required min="0" max="10"></label><br>
+        <label>Prova 3: <input type="number" step="any" name="Prova 3" required min="0" max="10"></label><br>
+        <label>TBL 1: <input type="number" step="any" name="TBL 1" required min="0" max="10"></label><br>
+        <label>TBL 2: <input type="number" step="any" name="TBL 2" required min="0" max="10"></label><br>
+        <label>TBL 3: <input type="number" step="any" name="TBL 3" required min="0" max="10"></label><br>
+        <label>Apresentação: <input type="number" step="any" name="Apresentação" required min="0" max="10"></label><br>
         <button type="submit">Calcular Média</button>
+
     </form>
     {% if media is defined %}
         <h2>Média final: {{ media|round(2) }}</h2>

@@ -20,6 +20,12 @@ def bioetica():
         tbl3 = float(request.form['TBL 3'])
         apres = float(request.form['Apresentação'])
         
+        # Aceitar apenas valores entre 0 e 10
+        notas = [p1, p2, p3, tbl1, tbl2, tbl3, apres]
+        if not all(0 <= n <= 10 for n in notas):
+            erro = "Todos os valores devem estar entre 0 e 10."
+            return render_template('bioetica.html', erro=erro)
+
         # Calcula a média ponderada das notas
         media = (((p1+p2+p3)/3) * 0.5) + (((tbl1+tbl2+tbl3)/3) * 0.2)+(apres*0.3)
 
@@ -40,6 +46,12 @@ def biomateriais():
         lab = float(request.form['Apresentação'])
         eng = float(request.form['Engajamento'])
 
+        # Aceitar apenas valores entre 0 e 10
+        notas = [p1, p2, tbl1, tbl2, lab, eng]
+        if not all(0 <= n <= 10 for n in notas):
+            erro = "Todos os valores devem estar entre 0 e 10."
+            return render_template('biomateriais.html', erro=erro)
+
         media = (p1 * 0.25) +(p2 * 0.35)+ (((tbl1+tbl2)/2) * 0.15)+(lab*0.15)+(eng*0.1)
 
         return render_template('biomateriais.html', media=media)
@@ -59,6 +71,12 @@ def digestorio():
         tbl4 = float(request.form['TBL 4'])
         tbl5 = float(request.form['TBL 5'])
 
+        # Aceitar apenas valores entre 0 e 10
+        notas = [p1, p2, p3, tbl1, tbl2, tbl3, tbl4, tbl5]
+        if not all(0 <= n <= 10 for n in notas):
+            erro = "Todos os valores devem estar entre 0 e 10."
+            return render_template('digestorio.html', erro=erro)
+
         media = (((p1+p2+p3)/3) * 0.7) + (((tbl1+tbl2+tbl3+tbl4+tbl5)/5) * 0.3)
 
         return render_template('digestorio.html', media=media)
@@ -75,6 +93,12 @@ def fisica():
         tbl2 = float(request.form['TBL 2'])
         seminario = float(request.form['Seminário'])
         aula = float(request.form['Atividade em aula'])
+
+        # Aceitar apenas valores entre 0 e 10
+        notas = [p1, p2, tbl1, tbl2, seminario, aula]
+        if not all(0 <= n <= 10 for n in notas):
+            erro = "Todos os valores devem estar entre 0 e 10."
+            return render_template('fisica.html', erro=erro)
 
         media = (p1*0.3)+(p2*0.3) + (((tbl1+tbl2)/2) * 0.1) + (seminario * 0.25) + (aula * 0.05)
 
@@ -93,6 +117,12 @@ def modelagem():
         tbl3 = float(request.form['TBL 3'])
         projeto = float(request.form['Projeto final'])
 
+        # Aceitar apenas valores entre 0 e 10
+        notas = [p1, p2, tbl1, tbl2, tbl3, projeto]
+        if not all(0 <= n <= 10 for n in notas):
+            erro = "Todos os valores devem estar entre 0 e 10."
+            return render_template('modelagem.html', erro=erro)
+
         media = (((p1+p2)/2)*0.6) + (((tbl1+tbl2+tbl3)/3) * 0.15) + (projeto * 0.25)
 
         return render_template('modelagem.html', media=media)
@@ -110,6 +140,12 @@ def sistemas():
         tbl3 = float(request.form['TBL 3'])
         quiz = float(request.form['Quiz de abertura'])
         pbl = float(request.form['PBL'])
+
+        # Aceitar apenas valores entre 0 e 10
+        notas = [p1, p2, tbl1, tbl2, tbl3, quiz, pbl]
+        if not all(0 <= n <= 10 for n in notas):
+            erro = "Todos os valores devem estar entre 0 e 10."
+            return render_template('sistemas.html', erro=erro)
 
         media = (((p1+p2)/2)*0.5) + (((tbl1+tbl2+tbl3)/3) * 0.15) + (quiz * 0.1) + (pbl * 0.25)
 
